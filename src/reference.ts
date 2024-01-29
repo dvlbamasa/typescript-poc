@@ -17,6 +17,8 @@ let employee: Employee = {id: 1, name: 'test', retire: (date: Date) => {
     console.log(date);
 }};
 
+console.log(employee)
+
 //Type Alias
 type Employee = {
     readonly id: number,
@@ -33,6 +35,8 @@ function kgToLbs(weight: number | string): number {
         return parseInt(weight) * 2.2;
     }
 }
+
+kgToLbs(1);
 
 //Intersection
 
@@ -51,9 +55,10 @@ let textBox: UiWidget = {
     resize: () => {}
 }
 
+console.log(textBox)
+
 //Literal Types
 type Quantity = 50 | 100;
-type Metrics = "cm" | "in";
 let quantity: Quantity = 100;
 
 //Nullable Types
@@ -65,6 +70,9 @@ function greet(name: string | null) {
     }
 }
 
+
+console.log(quantity)
+greet(null)
 //Optional Chaining
 type Customer = {
     birthday?: Date
@@ -94,3 +102,16 @@ const person: Person = {
     test: 'test',
     test2: 'test'
 }
+
+let testPerson = person;
+testPerson.first;
+
+//Class
+
+class Emoji {
+    constructor(public icon: string) {}
+}
+
+const sun = new Emoji('Sun');
+
+console.log(sun)
